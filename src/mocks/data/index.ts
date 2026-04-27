@@ -1,3 +1,3 @@
-import { products } from '@/mocks/data/products';
+import { users } from '@/mocks/data/users';
 
-export const data = { products };
+export const data = { users };

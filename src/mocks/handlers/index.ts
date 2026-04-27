@@ -1,1 +1,1 @@
-export * from './productHandler';
+export * from './userHandler';
