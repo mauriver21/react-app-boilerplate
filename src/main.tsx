@@ -5,12 +5,21 @@ import { store } from './store.ts';
 import { ModelProvider } from 'react-redux-use-model';
 import { Provider } from 'react-redux';
 
-createRoot(document.getElementById('root')!).render(
-  <Provider store={store}>
-    <ModelProvider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ModelProvider>
-  </Provider>,
-);
+const main = async () => {
+  if (process.env.NODE_ENV === 'development') {
+    const { worker } = await import('./mocks/browser');
+    worker.start();
+  }
+
+  createRoot(document.getElementById('root')!).render(
+    <Provider store={store}>
+      <ModelProvider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ModelProvider>
+    </Provider>,
+  );
+};
+
+main();

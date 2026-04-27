@@ -17,16 +17,18 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/api-clients": ["./src/api-clients"],
-      "@/components": ["./src/components"],
-      "@/contexts": ["./src/contexts"],
-      "@/hooks": ["./src/hooks"],
-      "@/models": ["./src/models"],
-      "@/repositories": ["./src/repositories"],
-      "@/routes": ["./src/routes"],
-      "@/states": ["./src/states"],
-      "@/store": ["./src/store"],
-      "@/utils": ["./src/utils"]
+      "@/api-clients/*": ["./src/api-clients/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/constants/*": ["./src/constants/*"],
+      "@/contexts/*": ["./src/contexts/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/mocks/*": ["./src/mocks/*"],
+      "@/models/*": ["./src/models/*"],
+      "@/repositories/*": ["./src/repositories/*"],
+      "@/routes/*": ["./src/routes/*"],
+      "@/states/*": ["./src/states/*"],
+      "@/store/*": ["./src/store/*"],
+      "@/utils/*": ["./src/utils/*"]
     }
   }
 }
