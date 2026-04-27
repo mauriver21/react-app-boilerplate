@@ -3,6 +3,6 @@ export enum EntityName {
 }
 
 export enum QueryKey {
-  Users = 'Users',
+  UsersListed = 'UsersListed',
   UsersFiltered = 'UsersFiltered',
 }

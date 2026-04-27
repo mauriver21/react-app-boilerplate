@@ -23,7 +23,7 @@ export const useUserController = (
 
   const listUsers = () => {
     userModel.listUsers({
-      queryKey: QueryKey.Users,
+      queryKey: QueryKey.UsersListed,
       paginationParams: defaultPaginationParams,
     });
   };
