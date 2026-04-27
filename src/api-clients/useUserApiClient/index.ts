@@ -6,7 +6,7 @@ export const useUserApiClient = () => {
   const listUsers = async (
     params: PaginationParams,
   ): Promise<ListResponse<User>> => {
-    const response = await axiosLocal.get<ListResponse<User>>('/movies', {
+    const response = await axiosLocal.get<ListResponse<User>>('/users', {
       params,
     });
     return response.data;

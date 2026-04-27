@@ -3,7 +3,7 @@ import { ENV } from '@/constants/env';
 import { data } from '@/mocks/data';
 
 export const userHandler = [
-  http.get(`${ENV.baseURL}/users`, () => {
+  http.get(`${ENV.BASE_LOCAL_URL}/users`, () => {
     return HttpResponse.json(data.users);
   }),
 ];
