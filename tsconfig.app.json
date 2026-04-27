@@ -24,9 +24,9 @@
       "@/models": ["./src/models"],
       "@/repositories": ["./src/repositories"],
       "@/routes": ["./src/routes"],
+      "@/states": ["./src/states"],
       "@/store": ["./src/store"],
       "@/utils": ["./src/utils"]
     }
-  },
-  "include": ["src"]
+  }
 }
