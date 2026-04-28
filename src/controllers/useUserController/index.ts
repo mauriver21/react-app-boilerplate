@@ -2,37 +2,37 @@ import { QueryKey } from '@/constants/enums';
 import { useUserModel } from '@/models/useUserModel';
 import { PaginationParams, useDebounce } from 'react-redux-use-model';
 
-export const useUserController = (
-  defaultPaginationParams: PaginationParams = {
-    _page: 0,
-    _size: 10,
-    _filter: '',
-  },
-) => {
+export const useUserController = () => {
   const userModel = useUserModel();
 
-  const filterUsers = useDebounce(
-    (paginationParams: Partial<PaginationParams>) => {
-      userModel.listUsers({
-        queryKey: QueryKey.UsersFiltered,
-        paginationParams: { ...defaultPaginationParams, ...paginationParams },
-        invalidateQuery: { strategy: 'onFilterChange' },
-      });
-    },
-  );
+  const filterUsers = useDebounce((paginationParams: PaginationParams) => {
+    userModel.listUsers({
+      queryKey: QueryKey.UsersFiltered,
+      paginationParams,
+      invalidateQuery: { strategy: 'onFilterChange' },
+    });
+  });
 
-  const listUsers = () => {
+  const listUsers = (paginationParams: PaginationParams) => {
     userModel.listUsers({
       queryKey: QueryKey.UsersListed,
-      paginationParams: defaultPaginationParams,
+      paginationParams,
     });
   };
 
-  const fetchUsers = () => {
-    if (defaultPaginationParams?._filter) {
-      filterUsers(defaultPaginationParams);
+  const fetchUsers = (
+    paginationParams?: Partial<{
+      page: number;
+      size: number;
+      filter: string;
+    }>,
+  ) => {
+    const { page = 0, size = 10, filter } = paginationParams || {};
+    const params = { _page: page, _size: size, _filter: filter };
+    if (filter) {
+      filterUsers(params);
     } else {
-      listUsers();
+      listUsers(params);
     }
   };
 
@@ -41,7 +41,6 @@ export const useUserController = (
 
   return {
     fetchUsers,
-    filterUsers,
     selectUsersPaginatedQuery,
     selectUserEntity,
   };
