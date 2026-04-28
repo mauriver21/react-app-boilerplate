@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { useUserController } from '@/controllers/useUserController';
+import { useUserRepository } from './repositories/useUserRepository';
 import { useSelector } from '@/hooks/useSelector';
 import { UserItem } from '@/components/UserItem';
 import { Pagination } from './components/Pagination';
 
 export const App = () => {
-  const { fetchUsers, selectUsersPaginatedQuery } = useUserController();
+  const { fetchUsers, selectUsersPaginatedQuery } = useUserRepository();
   const usersPaginatedQuery = useSelector(selectUsersPaginatedQuery);
   const pagination = usersPaginatedQuery.pagination;
 

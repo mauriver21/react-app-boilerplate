@@ -18,7 +18,7 @@
       "@/api-clients/*": ["./src/api-clients/*"],
       "@/components/*": ["./src/components/*"],
       "@/constants/*": ["./src/constants/*"],
-      "@/controllers/*": ["src/controllers/*"],
+      "@/repositories/*": ["./src/repositories/*"],
       "@/contexts/*": ["./src/contexts/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/interfaces/*": ["./src/interfaces/*"],
