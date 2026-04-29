@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useUserRepository } from './repositories/useUserRepository';
 import { useSelector } from '@/hooks/useSelector';
 import { UserItem } from '@/components/UserItem';
-import { Pagination } from './components/Pagination';
+import { Pagination } from '@/components/Pagination';
 
 export const App = () => {
   const { listUsers, selectUsersPaginatedQuery } = useUserRepository();
@@ -20,6 +20,7 @@ export const App = () => {
         onChange={(event) =>
           listUsers({
             ...paginationParams,
+            _page: 0,
             _filter: event.target.value,
           })
         }

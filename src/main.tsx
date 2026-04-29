@@ -1,7 +1,8 @@
 import { BrowserRouter } from 'react-router';
 import { createRoot } from 'react-dom/client';
 import { App } from './App.tsx';
-import { store } from './store.ts';
+import { store } from '@/store';
+import { MswProvider } from '@/components/MswProvider';
 import { ModelProvider } from 'react-redux-use-model';
 import { Provider } from 'react-redux';
 
@@ -12,13 +13,15 @@ const main = async () => {
   }
 
   createRoot(document.getElementById('root')!).render(
-    <Provider store={store}>
-      <ModelProvider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ModelProvider>
-    </Provider>,
+    <MswProvider>
+      <Provider store={store}>
+        <ModelProvider store={store}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ModelProvider>
+      </Provider>
+    </MswProvider>,
   );
 };
 
