@@ -21,8 +21,8 @@ dependencies:
     specifier: ^9.2.0
     version: 9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1)
   react-redux-use-model:
-    specifier: 0.0.38-alpha
-    version: 0.0.38-alpha(@reduxjs/toolkit@2.11.2)(react-redux@9.2.0)
+    specifier: 0.0.39-alpha
+    version: 0.0.39-alpha(@reduxjs/toolkit@2.11.2)(react-redux@9.2.0)
   react-router:
     specifier: ^7.14.2
     version: 7.14.2(react-dom@19.2.5)(react@19.2.5)
@@ -1806,8 +1806,8 @@ packages:
       scheduler: 0.27.0
     dev: false
 
-  /react-redux-use-model@0.0.38-alpha(@reduxjs/toolkit@2.11.2)(react-redux@9.2.0):
-    resolution: {integrity: sha512-jjwG5e5uhTHD7Jkv9uaJ1pLpk6k8Ce0k8zzO16jEvIrNaUnzd5ZIfK+v5sC8O/vLTbkFF3n8rvXyVye7qpOE1w==}
+  /react-redux-use-model@0.0.39-alpha(@reduxjs/toolkit@2.11.2)(react-redux@9.2.0):
+    resolution: {integrity: sha512-4SascApWWNVhrE0ukzQ6ZQN66WoCwDOL4ZaX4fO1e5GPX1EHcqCjs+l+fBwM7VEGp/gXETMFGyVPh3HaueF0NQ==}
     peerDependencies:
       '@reduxjs/toolkit': ^2
       react-redux: ^9

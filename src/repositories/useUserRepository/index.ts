@@ -21,20 +21,14 @@ export const useUserRepository = () => {
     });
   };
 
-  const fetchUsers = async (
-    paginationParams?: Partial<{
-      page: number;
-      size: number;
-      filter: string;
-    }>,
-  ) => {
+  const fetchUsers = async (paginationParams: PaginationParams) => {
     try {
-      const { page = 0, size = 10, filter } = paginationParams || {};
-      const params = { _page: page, _size: size, _filter: filter };
-      if (filter) {
-        await filterUsers(params);
+      const { _filter } = paginationParams;
+
+      if (_filter) {
+        await filterUsers(paginationParams);
       } else {
-        await listUsers(params);
+        await listUsers(paginationParams);
       }
     } catch (error) {
       console.error(handleError(error));
