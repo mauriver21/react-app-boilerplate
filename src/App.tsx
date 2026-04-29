@@ -5,12 +5,12 @@ import { UserItem } from '@/components/UserItem';
 import { Pagination } from './components/Pagination';
 
 export const App = () => {
-  const { fetchUsers, selectUsersPaginatedQuery } = useUserRepository();
+  const { listUsers, selectUsersPaginatedQuery } = useUserRepository();
   const usersPaginatedQuery = useSelector(selectUsersPaginatedQuery);
   const { paginationParams = { _page: 0, _size: 10 } } = usersPaginatedQuery;
 
   useEffect(() => {
-    fetchUsers(paginationParams);
+    listUsers(paginationParams);
   }, []);
 
   return (
@@ -18,7 +18,7 @@ export const App = () => {
       <input
         autoComplete="off"
         onChange={(event) =>
-          fetchUsers({
+          listUsers({
             ...paginationParams,
             _filter: event.target.value,
           })
@@ -29,7 +29,7 @@ export const App = () => {
       ))}
       <Pagination
         totalPages={usersPaginatedQuery.pagination?.totalPages}
-        onChange={(_page) => fetchUsers({ ...paginationParams, _page })}
+        onChange={(_page) => listUsers({ ...paginationParams, _page })}
       />
     </div>
   );

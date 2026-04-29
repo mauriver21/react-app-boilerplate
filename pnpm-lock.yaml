@@ -21,8 +21,8 @@ dependencies:
     specifier: ^9.2.0
     version: 9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1)
   react-redux-use-model:
-    specifier: 0.0.39-alpha
-    version: 0.0.39-alpha(@reduxjs/toolkit@2.11.2)(react-redux@9.2.0)
+    specifier: 0.0.40-alpha
+    version: 0.0.40-alpha(@reduxjs/toolkit@2.11.2)(react-redux@9.2.0)
   react-router:
     specifier: ^7.14.2
     version: 7.14.2(react-dom@19.2.5)(react@19.2.5)
@@ -1806,8 +1806,8 @@ packages:
       scheduler: 0.27.0
     dev: false
 
-  /react-redux-use-model@0.0.39-alpha(@reduxjs/toolkit@2.11.2)(react-redux@9.2.0):
-    resolution: {integrity: sha512-4SascApWWNVhrE0ukzQ6ZQN66WoCwDOL4ZaX4fO1e5GPX1EHcqCjs+l+fBwM7VEGp/gXETMFGyVPh3HaueF0NQ==}
+  /react-redux-use-model@0.0.40-alpha(@reduxjs/toolkit@2.11.2)(react-redux@9.2.0):
+    resolution: {integrity: sha512-v2CnYJboeWYIgagXcJ6Tww81Dh1MCoSvvADCHxq5lmY4xqOfJuxaKluckigbe5ZZpk1DdiiyZdpZqlRwiwpvmA==}
     peerDependencies:
       '@reduxjs/toolkit': ^2
       react-redux: ^9
@@ -2113,6 +2113,7 @@ packages:
 
   /uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
     dev: false
 
